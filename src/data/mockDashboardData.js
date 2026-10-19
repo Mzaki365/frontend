@@ -51,7 +51,7 @@ export const MOCK_STORES = [
   {
     id: 'store-01',
     code: 'STORE-01',
-    name: 'iPhone Store 01',
+    name: 'Star Store 01',
     status: 'Online', // 'Online' | 'Offline' | 'Not Connected'
     activeConversations: 2,
     workstationsCount: 3,
@@ -60,7 +60,7 @@ export const MOCK_STORES = [
   {
     id: 'store-02',
     code: 'STORE-02',
-    name: 'iPhone Store 02',
+    name: 'Star Store 02',
     status: 'Online',
     activeConversations: 3,
     workstationsCount: 4,
@@ -69,7 +69,7 @@ export const MOCK_STORES = [
   {
     id: 'store-03',
     code: 'STORE-03',
-    name: 'iPhone Store 03',
+    name: 'Star Store 03',
     status: 'Not Connected',
     activeConversations: 0,
     workstationsCount: 2,
@@ -81,7 +81,7 @@ export const MOCK_RECENT_CONVERSATIONS = [
   {
     id: 'conv-101',
     title: 'iPhone 16 Pro Max Trade-in Inquiry',
-    storeName: 'iPhone Store 01',
+    storeName: 'Star Store 01',
     storeId: 'store-01',
     startedAt: '10:42 AM',
     duration: '4m 15s',
@@ -90,7 +90,7 @@ export const MOCK_RECENT_CONVERSATIONS = [
   {
     id: 'conv-102',
     title: 'Storage & Color Options Discussion',
-    storeName: 'iPhone Store 02',
+    storeName: 'Star Store 02',
     storeId: 'store-02',
     startedAt: '10:35 AM',
     duration: '6m 20s',
@@ -99,7 +99,7 @@ export const MOCK_RECENT_CONVERSATIONS = [
   {
     id: 'conv-103',
     title: 'Carrier Financing & Monthly Plan Pitch',
-    storeName: 'iPhone Store 02',
+    storeName: 'Star Store 02',
     storeId: 'store-02',
     startedAt: '10:18 AM',
     duration: '8m 45s',
@@ -108,7 +108,7 @@ export const MOCK_RECENT_CONVERSATIONS = [
   {
     id: 'conv-104',
     title: 'AppleCare+ Bundle Objection Handling',
-    storeName: 'iPhone Store 01',
+    storeName: 'Star Store 01',
     storeId: 'store-01',
     startedAt: '09:55 AM',
     duration: '3m 50s',
@@ -117,7 +117,7 @@ export const MOCK_RECENT_CONVERSATIONS = [
   {
     id: 'conv-105',
     title: 'Walk-in Pricing Comparison',
-    storeName: 'iPhone Store 01',
+    storeName: 'Star Store 01',
     storeId: 'store-01',
     startedAt: '09:30 AM',
     duration: '2m 10s',

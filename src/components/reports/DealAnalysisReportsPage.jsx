@@ -262,9 +262,9 @@ export default function DealAnalysisReportsPage({ currentUser, token, socket }) 
 
         // Derive store comparisons
         const storeMap = {
-          'STORE-01': { code: 'STORE-01', name: 'iPhone Store 01 (5th Ave)', total: 0, confirmed: 0, followUp: 0, notConverted: 0 },
-          'STORE-02': { code: 'STORE-02', name: 'iPhone Store 02 (Beverly Hills)', total: 0, confirmed: 0, followUp: 0, notConverted: 0 },
-          'STORE-03': { code: 'STORE-03', name: 'iPhone Store 03 (Brickell)', total: 0, confirmed: 0, followUp: 0, notConverted: 0 },
+          'STORE-01': { code: 'STORE-01', name: 'Star Store 01 (5th Ave)', total: 0, confirmed: 0, followUp: 0, notConverted: 0 },
+          'STORE-02': { code: 'STORE-02', name: 'Star Store 02 (Beverly Hills)', total: 0, confirmed: 0, followUp: 0, notConverted: 0 },
+          'STORE-03': { code: 'STORE-03', name: 'Star Store 03 (Brickell)', total: 0, confirmed: 0, followUp: 0, notConverted: 0 },
         };
         (rep.conversations || []).forEach((c) => {
           const code = (c.storeCode || '').toUpperCase().includes('02') ? 'STORE-02' : (c.storeCode || '').toUpperCase().includes('03') ? 'STORE-03' : 'STORE-01';
@@ -675,9 +675,9 @@ export default function DealAnalysisReportsPage({ currentUser, token, socket }) 
                 onChange={(e) => setSelectedStore(e.target.value)}
               >
                 <MenuItem value="all">All Retail Branches</MenuItem>
-                <MenuItem value="STORE-01">iPhone Store 01 (5th Ave)</MenuItem>
-                <MenuItem value="STORE-02">iPhone Store 02 (Beverly Hills)</MenuItem>
-                <MenuItem value="STORE-03">iPhone Store 03 (Brickell)</MenuItem>
+                <MenuItem value="STORE-01">Star Store 01 (5th Ave)</MenuItem>
+                <MenuItem value="STORE-02">Star Store 02 (Beverly Hills)</MenuItem>
+                <MenuItem value="STORE-03">Star Store 03 (Brickell)</MenuItem>
               </Select>
             </FormControl>
           </Grid>

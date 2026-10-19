@@ -107,18 +107,17 @@ export default function App() {
             sx={{
               width: 56,
               height: 56,
-              bgcolor: '#059669',
-              background: 'linear-gradient(135deg, #059669 0%, #10b981 100%)',
-              boxShadow: '0 8px 24px rgba(5, 150, 105, 0.25)',
+              background: 'linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%)',
+              boxShadow: '0 8px 24px rgba(79, 70, 229, 0.35)',
               mb: 2,
               fontSize: '1.75rem',
             }}
           >
-            🎙️
+            ✨
           </Avatar>
-          <CircularProgress size={32} sx={{ color: '#059669', mb: 2 }} />
+          <CircularProgress size={32} sx={{ color: '#4F46E5', mb: 2 }} />
           <Typography variant="body2" sx={{ color: '#64748b', fontWeight: 600 }}>
-            Verifying secure session...
+            Initializing StarPulse AI...
           </Typography>
         </Box>
       ) : showOwnerPreview ? (

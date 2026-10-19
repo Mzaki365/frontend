@@ -244,7 +244,7 @@ export default function NotificationSettingsPage({ token, currentUser }) {
           description: `This is an operational demonstration alert triggered on demand from the owner settings workspace.`,
           severity: settings.rules[type]?.severity || 'info',
           storeCode: 'STORE-01',
-          storeName: 'iPhone Store 01 (5th Ave)',
+          storeName: 'Star Store 01 (5th Ave)',
         }),
       });
       const data = await res.json();
@@ -437,68 +437,6 @@ export default function NotificationSettingsPage({ token, currentUser }) {
         </CardContent>
       </Card>
 
-      {/* Optional Email Delivery Channel */}
-      <Card elevation={0} sx={{ borderRadius: 2.5, border: '1px solid', borderColor: 'divider', mb: 4 }}>
-        <CardHeader
-          avatar={<EmailIcon sx={{ color: 'primary.main' }} />}
-          title={<Typography variant="h6" sx={{ fontWeight: 700 }}>Optional Email Notification Channel</Typography>}
-          subheader="Configure automated email summaries for critical alert events. Email delivery is simulated safely if external SMTP credentials are not active."
-        />
-        <Divider />
-        <CardContent sx={{ p: 3 }}>
-          <Grid container spacing={3} alignItems="center">
-            <Grid item xs={12} md={4}>
-              <FormControlLabel
-                control={
-                  <Switch
-                    checked={settings.emailDelivery?.enabled || false}
-                    onChange={(e) =>
-                      setSettings((prev) => ({
-                        ...prev,
-                        emailDelivery: {
-                          ...prev.emailDelivery,
-                          enabled: e.target.checked,
-                        },
-                      }))
-                    }
-                  />
-                }
-                label={
-                  <Box>
-                    <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>Enable Email Forwarding</Typography>
-                    <Typography variant="caption" sx={{ color: 'text.secondary' }}>Receive critical notifications via email</Typography>
-                  </Box>
-                }
-              />
-            </Grid>
-
-            <Grid item xs={12} md={8}>
-              <TextField
-                fullWidth
-                size="small"
-                label="Recipient Email Address"
-                placeholder="owner@storelistener.com"
-                value={settings.emailDelivery?.recipientEmail || ''}
-                disabled={!settings.emailDelivery?.enabled}
-                onChange={(e) =>
-                  setSettings((prev) => ({
-                    ...prev,
-                    emailDelivery: {
-                      ...prev.emailDelivery,
-                      recipientEmail: e.target.value,
-                    },
-                  }))
-                }
-              />
-            </Grid>
-          </Grid>
-
-          <Alert severity="info" sx={{ mt: 2.5, fontSize: '0.8125rem' }}>
-            <strong>Production SMTP Configuration Note: </strong>
-            To connect a dedicated transactional SMTP service in production, provide <code>SMTP_HOST</code>, <code>SMTP_PORT</code>, <code>SMTP_USER</code>, and <code>SMTP_PASS</code> in the backend environment. In-app alerts remain permanently active independently.
-          </Alert>
-        </CardContent>
-      </Card>
 
       {/* Feedback Toast */}
       <Snackbar

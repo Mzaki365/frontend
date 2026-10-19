@@ -294,7 +294,7 @@ export default function ConversationReportModal({ open, conversation, onClose, c
               />
             </Stack>
             <Typography variant="caption" sx={{ color: '#64748B', mt: 0.5, display: 'block' }}>
-              {conversation.storeName || conversation.storeCode || 'iPhone Store'} • Specialist: <strong>{conversation.salesRep || 'Sales Specialist'}</strong> • Duration: {durationFormatted} • {conversation.startedAt ? new Date(conversation.startedAt).toLocaleString() : 'Recent'}
+              {conversation.storeName || conversation.storeCode || 'Star Store'} • Specialist: <strong>{conversation.salesRep || 'Sales Specialist'}</strong> • Duration: {durationFormatted} • {conversation.startedAt ? new Date(conversation.startedAt).toLocaleString() : 'Recent'}
             </Typography>
           </Box>
 
@@ -504,7 +504,7 @@ export default function ConversationReportModal({ open, conversation, onClose, c
                 <Grid item xs={12} sm={6} md={3}>
                   <Typography variant="caption" sx={{ color: '#64748B', display: 'block' }}>Store & Location</Typography>
                   <Typography variant="body2" sx={{ fontWeight: 700, color: '#0F172A' }}>
-                    {conversation.storeName || conversation.storeCode || 'iPhone Store'} ({conversation.storeCode || 'STORE-01'})
+                    {conversation.storeName || conversation.storeCode || 'Star Store'} ({conversation.storeCode || 'STORE-01'})
                   </Typography>
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}>

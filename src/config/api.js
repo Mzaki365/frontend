@@ -7,8 +7,8 @@ const rawEnvUrl = (import.meta.env.VITE_API_BASE_URL || '').trim();
 // Enforce active Render backend if the environment variable is empty, undefined,
 // or still contains the deprecated/dead Vercel backend URL.
 let targetUrl = rawEnvUrl;
-if (!targetUrl || targetUrl.includes('storelistener-backend.vercel.app')) {
-  targetUrl = 'https://storelistener.onrender.com';
+if (!targetUrl || targetUrl.includes('storelistener-backend.vercel.app') || targetUrl.includes('storelistener.onrender.com')) {
+  targetUrl = 'https://beckend-5q7t.onrender.com';
 }
 
 export const API_BASE_URL = targetUrl.replace(/\/$/, '');

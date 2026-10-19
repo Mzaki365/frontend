@@ -1447,59 +1447,6 @@ export default function DailyReportsPage({ currentUser, token, socket, onNavigat
             </Box>
           )}
 
-          {/* F. Data Governance, Boundaries & Audit Limitations */}
-          <Card sx={{ p: 3, borderRadius: 2.5, border: '1px solid #E2E8F0', bgcolor: '#F8FAFC' }}>
-            <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 1.5 }}>
-              <ShieldIcon sx={{ fontSize: 18, color: '#64748B' }} />
-              <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-                Data Governance & System Audit Notes
-              </Typography>
-            </Stack>
-
-            <Grid container spacing={2} sx={{ mb: 2 }}>
-              <Grid item xs={12} sm={4}>
-                <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 700, display: 'block' }}>
-                  BUSINESS TIMEZONE
-                </Typography>
-                <Typography variant="body2" sx={{ fontWeight: 600, color: 'text.primary', mt: 0.25 }}>
-                  {reportData.businessTimezone || 'America/New_York'}
-                </Typography>
-              </Grid>
-
-              <Grid item xs={12} sm={4}>
-                <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 700, display: 'block' }}>
-                  REPORTING-DATE ATTRIBUTION RULE
-                </Typography>
-                <Typography variant="body2" sx={{ fontWeight: 600, color: 'text.primary', mt: 0.25 }}>
-                  Attributed by immutable session start time
-                </Typography>
-              </Grid>
-
-              <Grid item xs={12} sm={4}>
-                <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 700, display: 'block' }}>
-                  LAST SYNCHRONIZED
-                </Typography>
-                <Typography variant="body2" sx={{ fontWeight: 600, color: 'text.primary', mt: 0.25 }}>
-                  {reportData.lastRefreshedAt ? new Date(reportData.lastRefreshedAt).toLocaleString() : 'Real-time'}
-                </Typography>
-              </Grid>
-            </Grid>
-
-            {reportData.dataLimitations && reportData.dataLimitations.length > 0 && (
-              <Box sx={{ pt: 1.5, borderTop: '1px solid #E2E8F0' }}>
-                <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 700, display: 'block', mb: 0.75 }}>
-                  AUDIT BOUNDARIES & HARDWARE LIMITATIONS
-                </Typography>
-                <Stack spacing={0.5}>
-                  {reportData.dataLimitations.map((lim, idx) => (
-                    <Typography key={idx} variant="caption" sx={{ color: '#475569', display: 'flex', alignItems: 'center', gap: 1 }}>
-                      <span style={{ fontSize: '10px' }}>•</span> {lim}
-                    </Typography>
-                  ))}
-                </Stack>
-              </Box>
-            )}
-          </Card>
         </Stack>
       )}
 

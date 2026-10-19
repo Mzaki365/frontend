@@ -84,7 +84,7 @@ const REPORT_CATALOGUE = [
 
       const sessions = (sessionsData.sessions || []).map((s) => ({
         id: s._id || s.sessionId,
-        storeName: s.storeName || (s.storeCode ? `iPhone Store ${s.storeCode.slice(-2)}` : 'Store'),
+        storeName: s.storeName || (s.storeCode ? `Star Store ${s.storeCode.slice(-2)}` : 'Store'),
         salesRep: s.salesRep || 'Sales Specialist',
         startedAt: new Date(s.startedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         duration: s.durationSeconds ? `${Math.floor(s.durationSeconds / 60)}m ${s.durationSeconds % 60}s` : 'Active',
@@ -429,9 +429,9 @@ export default function PdfReportsPage({ currentUser, token, onNavigate }) {
                 onChange={(e) => setStoreFilter(e.target.value)}
               >
                 <MenuItem value="all">All Retail Branches (Default)</MenuItem>
-                <MenuItem value="STORE-01">iPhone Store 01 (Downtown)</MenuItem>
-                <MenuItem value="STORE-02">iPhone Store 02 (Uptown)</MenuItem>
-                <MenuItem value="STORE-03">iPhone Store 03 (Suburbs)</MenuItem>
+                <MenuItem value="STORE-01">Star Store 01 (Downtown)</MenuItem>
+                <MenuItem value="STORE-02">Star Store 02 (Uptown)</MenuItem>
+                <MenuItem value="STORE-03">Star Store 03 (Suburbs)</MenuItem>
               </Select>
             </FormControl>
           </Grid>

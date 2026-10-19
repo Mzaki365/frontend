@@ -24,7 +24,7 @@ import {
   StorefrontOutlined as StoresIcon,
   BarChartOutlined as ReportsIcon,
   SettingsOutlined as SettingsIcon,
-  GraphicEq as BrandLogoIcon,
+  AutoAwesome as BrandLogoIcon,
 } from '@mui/icons-material';
 
 const NAV_ITEMS = [
@@ -44,45 +44,48 @@ export default function DashboardSidebar({
   drawerWidth = 260,
 }) {
   const sidebarContent = (
-    <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', bgcolor: '#FFFFFF' }}>
       {/* Brand Header */}
-      <Box sx={{ px: 2.5, py: 2.25, height: 64, display: 'flex', alignItems: 'center' }}>
+      <Box sx={{ px: 2.5, py: 2.5, height: 70, display: 'flex', alignItems: 'center' }}>
         <Stack direction="row" spacing={1.5} alignItems="center">
           <Box
             sx={{
-              width: 34,
-              height: 34,
-              borderRadius: 1.5,
-              bgcolor: 'primary.main',
-              color: 'primary.contrastText',
+              width: 38,
+              height: 38,
+              borderRadius: 2,
+              background: 'linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%)',
+              color: '#FFFFFF',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              boxShadow: '0 4px 12px rgba(79, 70, 229, 0.35)',
             }}
           >
-            <BrandLogoIcon sx={{ fontSize: 20 }} />
+            <BrandLogoIcon sx={{ fontSize: 22 }} />
           </Box>
           <Box>
             <Typography
               variant="h6"
               sx={{
-                fontWeight: 700,
-                fontSize: '1.0625rem',
+                fontWeight: 800,
+                fontSize: '1.125rem',
                 lineHeight: 1.1,
                 letterSpacing: '-0.02em',
-                color: 'text.primary',
+                background: 'linear-gradient(135deg, #0F172A 30%, #4F46E5 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
               }}
             >
-              Storelistener
+              StarPulse AI
             </Typography>
-            <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 500, fontSize: '0.6875rem' }}>
-              Sales Intelligence Platform
+            <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 600, fontSize: '0.6875rem' }}>
+              Conversation Intelligence
             </Typography>
           </Box>
         </Stack>
       </Box>
 
-      <Divider />
+      <Divider sx={{ borderColor: 'rgba(226, 232, 240, 0.8)' }} />
 
       {/* Navigation Links */}
       <Box sx={{ flex: 1, px: 1.5, py: 2 }}>
@@ -90,16 +93,16 @@ export default function DashboardSidebar({
           variant="caption"
           sx={{
             px: 1.5,
-            mb: 1,
+            mb: 1.5,
             display: 'block',
-            fontWeight: 600,
-            color: 'text.secondary',
+            fontWeight: 700,
+            color: '#94A3B8',
             textTransform: 'uppercase',
-            letterSpacing: '0.06em',
+            letterSpacing: '0.08em',
             fontSize: '0.6875rem',
           }}
         >
-          Overview & Operations
+          Intelligence Suite
         </Typography>
 
         <List disablePadding>
@@ -108,7 +111,7 @@ export default function DashboardSidebar({
             const isActive = activeNav === item.id;
 
             return (
-              <ListItem key={item.id} disablePadding sx={{ mb: 0.5 }}>
+              <ListItem key={item.id} disablePadding sx={{ mb: 0.75 }}>
                 <ListItemButton
                   onClick={() => {
                     if (onNavigate) onNavigate(item.id);
@@ -116,17 +119,23 @@ export default function DashboardSidebar({
                   }}
                   selected={isActive}
                   sx={{
-                    borderRadius: 1.5,
-                    py: 1,
-                    px: 1.5,
-                    color: isActive ? 'secondary.main' : 'text.primary',
-                    bgcolor: isActive ? '#F1F5F9' : 'transparent',
+                    borderRadius: 2,
+                    py: 1.1,
+                    px: 1.75,
+                    color: isActive ? '#4F46E5' : '#475569',
+                    background: isActive
+                      ? 'linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(14, 165, 233, 0.08) 100%)'
+                      : 'transparent',
+                    borderLeft: isActive ? '3px solid #4F46E5' : '3px solid transparent',
+                    boxShadow: isActive ? '0 2px 8px rgba(79, 70, 229, 0.08)' : 'none',
+                    transition: 'all 150ms ease-in-out',
                     '&:hover': {
-                      bgcolor: isActive ? '#E2E8F0' : '#F8FAFC',
+                      bgcolor: isActive ? 'rgba(79, 70, 229, 0.14)' : 'rgba(241, 245, 249, 0.7)',
+                      color: isActive ? '#4338CA' : '#0F172A',
                     },
                     '&.Mui-selected': {
-                      bgcolor: '#F1F5F9',
-                      fontWeight: 600,
+                      background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(14, 165, 233, 0.08) 100%)',
+                      fontWeight: 700,
                     },
                   }}
                 >

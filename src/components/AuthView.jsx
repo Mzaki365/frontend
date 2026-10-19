@@ -133,8 +133,8 @@ export default function AuthView({ onAuthSuccess, onPreviewOwnerDashboard }) {
     <Box
       sx={{
         minHeight: '100vh',
-        bgcolor: '#f1f5f9',
-        background: 'radial-gradient(circle at 10% 20%, #f8fafc 0%, #e2e8f0 90%)',
+        bgcolor: '#0B0F19',
+        background: 'radial-gradient(circle at 15% 15%, #1e1b4b 0%, #0b0f19 60%), radial-gradient(circle at 85% 85%, #0f172a 0%, #0b0f19 60%)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -146,10 +146,9 @@ export default function AuthView({ onAuthSuccess, onPreviewOwnerDashboard }) {
         sx={{
           maxWidth: 480,
           width: '100%',
-          borderRadius: 3.5,
-          border: '1px solid',
-          borderColor: '#cbd5e1',
-          boxShadow: '0 20px 45px -10px rgba(15, 23, 42, 0.12)',
+          borderRadius: 4,
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.5), 0 0 40px rgba(79, 70, 229, 0.15)',
           bgcolor: '#ffffff',
           overflow: 'hidden',
         }}
@@ -157,40 +156,58 @@ export default function AuthView({ onAuthSuccess, onPreviewOwnerDashboard }) {
         {/* Header Banner */}
         <Box
           sx={{
-            p: { xs: 3, sm: 4 },
+            p: { xs: 3.5, sm: 4 },
             pb: 3,
-            background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+            background: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)',
             color: '#ffffff',
             textAlign: 'center',
+            position: 'relative',
           }}
         >
           <Avatar
             sx={{
-              width: 56,
-              height: 56,
-              bgcolor: 'primary.main',
-              boxShadow: '0 8px 20px rgba(5, 150, 105, 0.35)',
+              width: 58,
+              height: 58,
+              background: 'linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%)',
+              boxShadow: '0 8px 24px rgba(79, 70, 229, 0.45)',
               mx: 'auto',
               mb: 1.5,
               fontSize: '1.75rem',
             }}
           >
-            🎙️
+            ✨
           </Avatar>
-          <Typography variant="h5" sx={{ fontWeight: 800, letterSpacing: '-0.02em' }}>
-            Storelistener Owner Portal
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 800,
+              letterSpacing: '-0.02em',
+              color: '#FFFFFF !important',
+              textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
+            }}
+          >
+            StarPulse AI Portal
           </Typography>
-          <Typography variant="caption" sx={{ color: '#94a3b8', fontSize: '0.8125rem' }}>
-            Multi-Store Sales Intelligence & Approval Dashboard
+          <Typography
+            variant="caption"
+            sx={{
+              color: '#CBD5E1 !important',
+              fontSize: '0.8125rem',
+              display: 'block',
+              mt: 0.5,
+              fontWeight: 500,
+            }}
+          >
+            Enterprise Retail Intelligence & Executive Command Suite
           </Typography>
         </Box>
 
         {/* Portal Scope Badge */}
         <Box sx={{ px: 3, py: 1.75, bgcolor: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
           <Stack direction="row" alignItems="center" spacing={1} justifyContent="center">
-            <AdminIcon sx={{ fontSize: 18, color: '#059669' }} />
+            <AdminIcon sx={{ fontSize: 18, color: '#4F46E5' }} />
             <Typography variant="caption" sx={{ fontWeight: 700, color: '#334155', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Authorized Owner / Store Admin Access Only
+              Executive Store Admin Access
             </Typography>
           </Stack>
         </Box>
@@ -256,7 +273,11 @@ export default function AuthView({ onAuthSuccess, onPreviewOwnerDashboard }) {
                   py: 1.4,
                   fontWeight: 700,
                   fontSize: '0.9375rem',
-                  boxShadow: '0 4px 14px rgba(5, 150, 105, 0.25)',
+                  background: 'linear-gradient(135deg, #4F46E5 0%, #6366F1 100%)',
+                  boxShadow: '0 4px 14px rgba(79, 70, 229, 0.35)',
+                  '&:hover': {
+                    background: 'linear-gradient(135deg, #4338CA 0%, #4F46E5 100%)',
+                  },
                 }}
               >
                 {loading ? 'Authenticating...' : 'Sign In as Owner'}
@@ -264,79 +285,6 @@ export default function AuthView({ onAuthSuccess, onPreviewOwnerDashboard }) {
             </Stack>
           </form>
 
-          {/* Quick Demo Fill Helper */}
-          <Paper
-            variant="outlined"
-            sx={{
-              mt: 3,
-              p: 2,
-              borderRadius: 2,
-              bgcolor: '#f8fafc',
-              borderColor: '#e2e8f0',
-            }}
-          >
-            <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1}>
-              <Box>
-                <Typography variant="caption" sx={{ fontWeight: 700, color: '#475569', display: 'block' }}>
-                  Configured Owner Account
-                </Typography>
-                <Typography variant="caption" sx={{ color: '#64748b' }}>
-                  admin@store.com
-                </Typography>
-              </Box>
-              <Chip
-                label="Fill Credentials"
-                size="small"
-                onClick={handleQuickDemoLogin}
-                clickable
-                color="primary"
-                variant="outlined"
-                sx={{ fontWeight: 600, fontSize: '0.72rem' }}
-              />
-            </Stack>
-          </Paper>
-
-          {/* Workstation / Sales Manager Signup Notice */}
-          <Box
-            sx={{
-              mt: 3,
-              p: 2,
-              borderRadius: 2,
-              bgcolor: '#f0fdf4',
-              border: '1px solid #bbf7d0',
-            }}
-          >
-            <Stack direction="row" spacing={1.5} alignItems="flex-start">
-              <DesktopIcon sx={{ color: '#059669', fontSize: 20, mt: 0.2 }} />
-              <Box>
-                <Typography variant="caption" sx={{ fontWeight: 700, color: '#166534', display: 'block' }}>
-                  Sales Manager Workstation Terminal Notice
-                </Typography>
-                <Typography variant="caption" sx={{ color: '#15803d', display: 'block', mt: 0.5, lineHeight: 1.4 }}>
-                  Sales Manager signups and terminal logins are conducted exclusively through the <strong>Storelistener Electron Desktop Application</strong> at store POS counters.
-                </Typography>
-              </Box>
-            </Stack>
-          </Box>
-
-          {/* Preview Owner Dashboard button for evaluation */}
-          {onPreviewOwnerDashboard && (
-            <Box sx={{ mt: 2.5, textAlign: 'center' }}>
-              <Button
-                variant="text"
-                size="small"
-                onClick={onPreviewOwnerDashboard}
-                sx={{
-                  color: '#64748b',
-                  fontSize: '0.78rem',
-                  textTransform: 'none',
-                  '&:hover': { color: 'primary.main', bgcolor: 'transparent' },
-                }}
-              >
-                Direct Dashboard View (Development Mode)
-              </Button>
-            </Box>
-          )}
         </CardContent>
       </Card>
 

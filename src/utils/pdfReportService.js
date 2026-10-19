@@ -312,7 +312,7 @@ export function downloadStoreOverviewReport({
 
   const storeRows = stores.map((s) => [
     s.code || s.id || 'STORE-01',
-    s.name || 'iPhone Store',
+    s.name || 'Star Store',
     s.location || 'Retail Counter Floor',
     s.status || 'Online',
     s.activeConversations != null ? `${s.activeConversations} active` : '0 active',
@@ -345,7 +345,7 @@ export function downloadStoreOverviewReport({
 
   const convRows = recentConversations.map((c) => [
     String(c.id || c.sessionId || '').slice(-8) || 'N/A',
-    c.storeName || 'iPhone Store',
+    c.storeName || 'Star Store',
     c.salesRep || 'Sales Specialist',
     c.startedAt || 'Recent',
     c.duration || 'Active',
@@ -828,7 +828,7 @@ export function downloadLiveMonitoringReport({
 
   const liveRows = allActiveList.map((c) => [
     c.id ? String(c.id).slice(-8) : 'ACTIVE',
-    c.storeName || 'iPhone Store',
+    c.storeName || 'Star Store',
     c.workstation || 'Counter 01',
     c.salesRep || 'Sales Specialist',
     c.startedAt || 'Active',
@@ -949,7 +949,7 @@ export function downloadSingleConversationReport({
 
   const sessionId = session.sessionId || session.id || 'N/A';
   const shortId = sessionId.length > 12 ? sessionId.slice(-8) : sessionId;
-  const storeName = session.storeName || session.storeCode || 'iPhone Store';
+  const storeName = session.storeName || session.storeCode || 'Star Store';
   const salesRep = session.salesRep || 'Sales Specialist';
   const startedAt = session.startedAt ? formatReportDate(session.startedAt) : 'Recent';
   const durationSec = session.durationSeconds || 0;

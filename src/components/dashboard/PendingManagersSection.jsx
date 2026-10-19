@@ -49,9 +49,9 @@ import {
 import { BACKEND_URL, DEFAULT_SOCKET_OPTIONS } from '../../config/api';
 
 const STORE_LABELS = {
-  'STORE-01': 'iPhone Store 01 (Downtown)',
-  'STORE-02': 'iPhone Store 02 (Uptown)',
-  'STORE-03': 'iPhone Store 03 (Suburbs)',
+  'STORE-01': 'Star Store 01 (Downtown)',
+  'STORE-02': 'Star Store 02 (Uptown)',
+  'STORE-03': 'Star Store 03 (Suburbs)',
 };
 
 export default function PendingManagersSection({ currentUser, token }) {

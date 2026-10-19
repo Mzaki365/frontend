@@ -387,9 +387,9 @@ export default function SalespersonPerformancePage({ currentUser, token, onNavig
                 onChange={(e) => setSelectedStore(e.target.value)}
               >
                 <MenuItem value="all">All Stores</MenuItem>
-                <MenuItem value="store-01">iPhone Store 01 (5th Ave)</MenuItem>
-                <MenuItem value="store-02">iPhone Store 02 (Beverly Hills)</MenuItem>
-                <MenuItem value="store-03">iPhone Store 03 (Brickell)</MenuItem>
+                <MenuItem value="store-01">Star Store 01 (5th Ave)</MenuItem>
+                <MenuItem value="store-02">Star Store 02 (Beverly Hills)</MenuItem>
+                <MenuItem value="store-03">Star Store 03 (Brickell)</MenuItem>
               </Select>
             </FormControl>
           </Grid>

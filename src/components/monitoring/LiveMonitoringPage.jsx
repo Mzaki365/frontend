@@ -122,9 +122,9 @@ export default function LiveMonitoringPage({ currentUser, token }) {
   // --- Store & Authorization State ---
   const [stores, setStores] = useState([
     { id: 'all', code: 'ALL', name: 'All Retail Branches' },
-    { id: 'store-01', code: 'STORE-NYC-01', name: 'iPhone Store 01 (Downtown)' },
-    { id: 'store-02', code: 'STORE-BK-02', name: 'iPhone Store 02 (Brooklyn)' },
-    { id: 'store-03', code: 'STORE-QNS-03', name: 'iPhone Store 03 (Queens)' },
+    { id: 'store-01', code: 'STORE-NYC-01', name: 'Star Store 01 (Downtown)' },
+    { id: 'store-02', code: 'STORE-BK-02', name: 'Star Store 02 (Brooklyn)' },
+    { id: 'store-03', code: 'STORE-QNS-03', name: 'Star Store 03 (Queens)' },
   ]);
   const [selectedStore, setSelectedStore] = useState('all');
 
@@ -790,7 +790,7 @@ export default function LiveMonitoringPage({ currentUser, token }) {
                         {/* Store & Branch */}
                         <TableCell>
                           <Typography variant="body2" sx={{ fontWeight: 600, color: '#0F172A' }}>
-                            {session.storeName || session.storeCode || 'iPhone Store'}
+                            {session.storeName || session.storeCode || 'Star Store'}
                           </Typography>
                           <Typography variant="caption" sx={{ color: '#64748B' }}>
                             {session.storeCode || 'STORE-01'}

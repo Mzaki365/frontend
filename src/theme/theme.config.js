@@ -15,33 +15,33 @@ import { createTheme } from '@mui/material/styles';
  */
 export const paletteTokens = {
   primary: {
-    main: '#111827', // Slate 900
-    light: '#1F2937', // Slate 800
-    dark: '#030712', // Slate 950
+    main: '#4F46E5', // Royal Indigo 600
+    light: '#6366F1', // Indigo 500
+    dark: '#3730A3', // Indigo 800
     contrastText: '#FFFFFF',
   },
   secondary: {
-    main: '#2563EB', // Blue 600
-    light: '#3B82F6', // Blue 500
-    dark: '#1D4ED8', // Blue 700
+    main: '#0EA5E9', // Sky Cyan 500
+    light: '#38BDF8', // Sky 400
+    dark: '#0284C7', // Sky 600
     contrastText: '#FFFFFF',
   },
   // Custom dedicated AI accent slot
   ai: {
-    main: '#7C3AED', // Violet 600
-    light: '#9333EA', // Violet 500
-    dark: '#6D28D9', // Violet 700
+    main: '#8B5CF6', // Purple 500
+    light: '#A78BFA', // Purple 400
+    dark: '#6D28D9', // Purple 700
     contrastText: '#FFFFFF',
-    subtleBg: '#F5F3FF', // Violet 50 for background tints
-    subtleBorder: '#DDD6FE', // Violet 200
+    subtleBg: '#F5F3FF', // Purple 50
+    subtleBorder: '#DDD6FE', // Purple 200
   },
   success: {
-    main: '#16A34A', // Green 600
-    light: '#22C55E', // Green 500
-    dark: '#15803D', // Green 700
+    main: '#10B981', // Emerald 500
+    light: '#34D399', // Emerald 400
+    dark: '#059669', // Emerald 600
     contrastText: '#FFFFFF',
-    subtleBg: '#F0FDF4',
-    subtleBorder: '#BBF7D0',
+    subtleBg: '#ECFDF5',
+    subtleBorder: '#A7F3D0',
   },
   warning: {
     main: '#F59E0B', // Amber 500
@@ -52,9 +52,9 @@ export const paletteTokens = {
     subtleBorder: '#FDE68A',
   },
   error: {
-    main: '#DC2626', // Red 600
-    light: '#EF4444', // Red 500
-    dark: '#B91C1C', // Red 700
+    main: '#EF4444', // Red 500
+    light: '#F87171', // Red 400
+    dark: '#DC2626', // Red 600
     contrastText: '#FFFFFF',
     subtleBg: '#FEF2F2',
     subtleBorder: '#FECACA',
@@ -64,8 +64,8 @@ export const paletteTokens = {
     paper: '#FFFFFF',
   },
   text: {
-    primary: '#111827', // Slate 900
-    secondary: '#64748B', // Slate 500
+    primary: '#0F172A', // Slate 900
+    secondary: '#475569', // Slate 600
     disabled: '#94A3B8', // Slate 400
   },
   divider: '#E2E8F0', // Slate 200
@@ -81,23 +81,22 @@ export const layoutTokens = {
   sidebarWidth: 260,
   headerHeight: 64,
   cardPadding: 24,
-  borderRadius: 8,
-  controlHeight: 38,
+  borderRadius: 12,
+  controlHeight: 40,
 };
 
 /**
  * 3. Typography Definitions
- * Inter preferred font family with robust system sans-serif fallback.
+ * Plus Jakarta Sans modern SaaS typography with clean fallbacks.
  */
 export const typographyTokens = {
   fontFamily: [
+    '"Plus Jakarta Sans"',
     'Inter',
     '-apple-system',
     'BlinkMacSystemFont',
     '"Segoe UI"',
     'Roboto',
-    '"Helvetica Neue"',
-    'Arial',
     'sans-serif',
   ].join(','),
   h1: {
@@ -246,18 +245,20 @@ export const storelistenerTheme = createTheme({
           fontSize: '0.9375rem',
         },
         containedPrimary: {
-          backgroundColor: paletteTokens.primary.main,
-          color: paletteTokens.primary.contrastText,
+          background: 'linear-gradient(135deg, #4F46E5 0%, #6366F1 100%)',
+          color: '#FFFFFF',
+          boxShadow: '0 2px 10px rgba(79, 70, 229, 0.25)',
           '&:hover': {
-            backgroundColor: paletteTokens.primary.light,
+            background: 'linear-gradient(135deg, #4338CA 0%, #4F46E5 100%)',
+            boxShadow: '0 4px 14px rgba(79, 70, 229, 0.35)',
           },
         },
         outlinedPrimary: {
-          borderColor: paletteTokens.divider,
-          color: paletteTokens.text.primary,
+          borderColor: 'rgba(79, 70, 229, 0.3)',
+          color: '#4F46E5',
           '&:hover': {
-            backgroundColor: '#F1F5F9',
-            borderColor: '#CBD5E1',
+            backgroundColor: '#EEF2FF',
+            borderColor: '#4F46E5',
           },
         },
       },
@@ -287,10 +288,11 @@ export const storelistenerTheme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: layoutTokens.borderRadius,
-          border: `1px solid ${paletteTokens.divider}`,
+          border: '1px solid rgba(226, 232, 240, 0.85)',
           backgroundColor: paletteTokens.background.paper,
           backgroundImage: 'none',
-          boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04)',
+          boxShadow: '0 4px 20px -2px rgba(15, 23, 42, 0.05)',
+          transition: 'box-shadow 200ms ease, transform 200ms ease',
         },
       },
     },

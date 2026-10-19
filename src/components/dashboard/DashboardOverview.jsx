@@ -80,7 +80,7 @@ export default function DashboardOverview({ onNavigate, currentUser, token }) {
         const formatted = data.sessions.map((s) => ({
           id: s._id || s.sessionId,
           title: s.title || `Conversation - ${new Date(s.startedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`,
-          storeName: s.storeName || (s.storeCode ? `iPhone Store ${s.storeCode.slice(-2)}` : 'Store'),
+          storeName: s.storeName || (s.storeCode ? `Star Store ${s.storeCode.slice(-2)}` : 'Store'),
           workstation: s.workstation || 'Counter 01',
           salesRep: s.salesRep || 'Sales Specialist',
           startedAt: new Date(s.startedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
@@ -332,9 +332,9 @@ export default function DashboardOverview({ onNavigate, currentUser, token }) {
 
         <Grid container spacing={2.5}>
           {(stores.length > 0 ? stores : [
-            { id: 'store-01', code: 'STORE-01', name: 'iPhone Store 01', status: 'Offline', currentState: 'Offline' },
-            { id: 'store-02', code: 'STORE-02', name: 'iPhone Store 02', status: 'Offline', currentState: 'Offline' },
-            { id: 'store-03', code: 'STORE-03', name: 'iPhone Store 03', status: 'Offline', currentState: 'Offline' },
+            { id: 'store-01', code: 'STORE-01', name: 'Star Store 01', status: 'Offline', currentState: 'Offline' },
+            { id: 'store-02', code: 'STORE-02', name: 'Star Store 02', status: 'Offline', currentState: 'Offline' },
+            { id: 'store-03', code: 'STORE-03', name: 'Star Store 03', status: 'Offline', currentState: 'Offline' },
           ]).map((store) => (
             <Grid item xs={12} md={4} key={store.id || store.code}>
               <StoreCard store={store} onAction={handleStoreAction} />
